@@ -3,6 +3,7 @@ import json
 
 
 def find_item(name):
+    # Insert the URL below of the json data of the website you want to get an item from
     url = 'https://www.supremenewyork.com/mobile_stock.json'
     html = requests.get(url=url)
     output = json.loads(html.text)
