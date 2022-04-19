@@ -38,7 +38,7 @@
 
 5. > Determine which color and size the specific item is. Add that info to Line 43
 
-   - color_id = get_color(item_id, 'Grey', '30')
+   - color_id = get_color(item_id, 'Grey', 'Small')
 
 <br/>
 
