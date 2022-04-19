@@ -4,37 +4,33 @@ import json
 
 
 def find_item(name):
-    # find a specific item
-    # Insert the URL below of the json data of the website you want to get an item from
+    # Find an item of a store and print name and id
+    # Use .json url of all items for whatever site is being searched
     url = 'https://www.supremenewyork.com/mobile_stock.json'
     html = requests.get(url=url)
     output = json.loads(html.text)
 
+    # Enter the category that contains all the items of the store
     for category in output['products_and_categories']:
         for item in output['products_and_categories'][category]:
             if name in item['name']:
-                print(item['name'])
-                print(item['id'])
-                # Use the ID printed to find all the info about the specific item by typing in 'www.supremenewyork.com/shop/{id}' to your browser.
+                print('Selected Item: ' + item['name'])
+                print('Item ID: ' + str(item['id']))
                 return item['id']
 
 
 def get_color(item_id, color, size):
-    # find specific color of the item found above
+    # Get the color and id of the item selected
     url = f'https://www.supremenewyork.com/shop/{item_id}.json'
     html = requests.get(url=url)
     output = json.loads(html.text)
-    # print(output)
 
     for product_color in output['styles']:
         if color in product_color['name']:
-            for product_size in product_color['sizes']:
+            for product_size in product_color['size']:
                 if size in product_size['name']:
                     return product_color['id']
 
 
-if __name__ == '__main__':
-    item_id = find_item('Cargo Pant')
-    # after the item_id add color you want followed by the size
-    color_id = get_color(item_id, 'Orange', '34')
-    print(color_id)
+# Type the item name inside find the exact item
+find_item('Cargo Pant')
