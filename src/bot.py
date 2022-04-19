@@ -37,6 +37,8 @@ def get_color(item_id, color, size):
 # find_item('Cargo Pant')
 
 if __name__ == '__main__':
-    item_id = find_item('Cargo Pant')
-    color_id = get_color(item_id, 'Olive', '30')
+    # Enter in name of item you want to search
+    item_id = find_item('Small Box Sweatpant')
+    # Enter in the color and size you want to search for
+    color_id = get_color(item_id, 'Grey', '30')
     print('Color ID: ' + str(color_id))
