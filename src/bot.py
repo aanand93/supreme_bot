@@ -25,6 +25,7 @@ def get_color(item_id, color, size):
     html = requests.get(url=url)
     output = json.loads(html.text)
 
+    # Enter sub category of item chosen to further filter resutls
     for product_color in output['styles']:
         if color in product_color['name']:
             for product_size in product_color['sizes']:
