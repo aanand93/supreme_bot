@@ -39,6 +39,6 @@ def get_color(item_id, color, size):
 if __name__ == '__main__':
     # Enter in name of item you want to search
     item_id = find_item('Small Box Sweatpant')
-    # Enter in the color and size you want to search for
+    # Enter in the color and size you want to search for once json data is viewed for the item
     color_id = get_color(item_id, 'Grey', '30')
     print('Color ID: ' + str(color_id))
