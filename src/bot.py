@@ -27,10 +27,15 @@ def get_color(item_id, color, size):
 
     for product_color in output['styles']:
         if color in product_color['name']:
-            for product_size in product_color['size']:
+            for product_size in product_color['sizes']:
                 if size in product_size['name']:
                     return product_color['id']
 
 
-# Type the item name inside find the exact item
-find_item('Cargo Pant')
+# # Type the item name inside find the exact item
+# find_item('Cargo Pant')
+
+if __name__ == '__main__':
+    item_id = find_item('Cargo Pant')
+    color_id = get_color(item_id, 'Olive', '30')
+    print('Color ID: ' + str(color_id))
